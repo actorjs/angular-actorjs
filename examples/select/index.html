@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Select</h1>
+
+    <div ng-app="app">
+
+        <form ng-controller="initController">
+
+            <div class="form-group" ng-init="selele1='1'">
+                <label for="select1">option</label>
+                <rc-select id="select1" name="select1" ng-model="select1" class="form-control">
+                    <option value="1">Test1</option>
+                    <option value="2">Test2</option>
+                </rc-select>
+            </div>
+
+            <div class="form-group">
+                <label for="select2">ng-repeat</label>
+                <rc-select id="select2" name="select2" ng-model="select2" class="form-control" rc-init="testInit">
+                    <option value="{{item}}" ng-repeat="item in list">{{item}}</option>
+                </rc-select>
+            </div>
+
+            <div class="form-group">
+                <label for="select3">ng-options</label>
+                <rc-select id="select3" name="select2" ng-model="select3" class="form-control"
+                           ng-options="i.name for i in list track by i"></rc-select>
+            </div>
+
+
+            <p>select1: {{select1}}</p>
+
+            <p>select2: {{select2}}</p>
+
+            <p>select3: {{select3}}</p>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+<script src="/lib/angular/angular.js"></script>
+
+<script type="text/javascript" src="/bundle.js"></script>
+<!--<script type="text/javascript" src="app.js"></script>-->
+
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="/directives/rcInput.js"></script>
+<script type="text/javascript" src="/directives/rcSelect.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

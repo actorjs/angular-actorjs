@@ -16,12 +16,10 @@ angular.module("rc")
                 init: "&rcInit",
             },
             link: function (scope, element, attrs, controlls) {
-                console.log(scope)
+
                 var name = attrs['name'];
                 var ngModel = controlls[1];
                 var ngOptions = attrs['ngOptions'];
-
-                //console.log("ngOptions", scope.options)
 
                 var actor = new actorjs.components.SelectComponent(name);
                 var actorRef = scope.$parent.actorRef.context.actorOf(actor, name);
@@ -44,11 +42,10 @@ angular.module("rc")
                     var options = []
                     for (var i = 0; i < element[0].children.length; i++) {
                         var option = {
-                            value: element[0].children[i].value,
+                            value: JSON.parse(element[0].children[i].value),
                             label: element[0].children[i].innerHTML
                         };
-                        if (option.value !== "?")
-                            options.push(option);
+                        options.push(option);
                     }
                     actorRef.tell({"options": options});
 
@@ -56,7 +53,11 @@ angular.module("rc")
 
                 actor.events.onStart = function (options) {
 
-                    var value = null;
+
+                    ngModel.$setViewValue(actor.value);
+
+
+                    element.val(actor.value);
 
                     element[0].innerHTML = "";
                     actor.options.forEach(function (item) {
@@ -67,10 +68,10 @@ angular.module("rc")
 
                     });
 
-                    ngModel.$setViewValue(actor.value);
                     ngModel.$render();
 
-                    element.val(actor.value);
+
+
 
                 };
 
@@ -81,9 +82,9 @@ angular.module("rc")
                 // Listen for change events to enable binding
                 element.bind('change', function (event) {
 
-                    if (actor.ready) {
-                        actorRef.tell({"value": element.val()});
-                    }
+                        console.log(ngModel.$viewValue);
+                        actorRef.tell({"value": ngModel.$viewValue});
+
 
 
                 });

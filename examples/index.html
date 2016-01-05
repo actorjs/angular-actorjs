@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Hello World!</h1>
+
+
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input id="myText1" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input id="myText2" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <select id="sel1" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </form>
+
+    <div ng-app="app">
+
+        <form ng-controller="initController">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-input type="text" id="hallo" name="email" ng-model="lala" valid="lala" class="form-control" id="exampleInputEmail11" placeholder="Email" ></rc-input>
+            </div>
+
+            {{lala}}
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-input type="radio" name="hallo" ng-model="tralla" value="123" valid="lala" class="form-control" ></rc-input>
+             </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-input type="radio" name="hallo" ng-model="tralla" value="456" class="form-control" ></rc-input>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-input type="radio" name="hallo" ng-model="tralla" value="789" class="form-control" ></rc-input>
+            </div>
+
+
+            <div class="form-group" ng-init="selele1='1'">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-select name="select1" ng-model="selele1" class="form-control">
+                    <option value="1">Test1</option>
+                    <option value="2">Test2</option>
+                </rc-select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-select name="select2" ng-model="selele2" class="form-control" ng-options="i.name for i in list track by i" rc-init="testInit"></rc-select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <rc-select name="select3" ng-model="selele3" class="form-control" rc-init="testInit">
+                    <option value="{{item}}" ng-repeat="item in list">{{item}}</option>
+                </rc-select>
+            </div>
+
+
+            <p>Value: {{tralla}}</p>
+            <p>Value1: {{selele1}}</p>
+            <p>Value2: {{selele2}}</p>
+            <p>Value3: {{selele3}}</p>
+            <p>List: {{list}}</p>
+
+
+
+        </form>
+
+
+        <div contenteditable name="myWidget" ng-model="userContent" required>Change me!</div>
+
+{{userContent}}
+    </div>
+
+</div>
+
+<script src="/lib/angular/angular.js"></script>
+
+<script type="text/javascript" src="bundle.js"></script>
+<!--<script type="text/javascript" src="app.js"></script>-->
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="js/directives/rcInput.js"></script>
+<script type="text/javascript" src="js/directives/rcSelect.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

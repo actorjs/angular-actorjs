@@ -1,0 +1,32 @@
+{
+  "name": "angular-actorjs",
+  "version": "1.0.0",
+  "description": "Angular ActorJs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "?"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "actorjs-bus": "^1.0.2",
+    "actorjs-core": "^1.0.6",
+    "actorjs-persist": "^1.0.4",
+    "actorjs-components": "^1.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.3.4",
+    "webpack": "^1.12.9"
+  }
+}

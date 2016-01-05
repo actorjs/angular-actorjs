@@ -1,6 +1,4 @@
 module.exports = {
-
-
     core: {
         ActorSystem: require("actorjs-core").ActorSystem,
         ActorMatchers: require("actorjs-core").ActorMatchers,
@@ -14,9 +12,8 @@ module.exports = {
         PersistXMLHttp: require("actorjs-persist").PersistXMLHttp
     },
     components: {
-        InputComponent: require("./src/InputComponent"),
-        SelectComponent: require("./src/SelectComponent"),
-        ValidationComponent: require("./src/ValidationComponent")
+        InputComponent: require("actorjs-components").InputComponent,
+        SelectComponent: require("actorjs-components").SelectComponent,
+        ValidationComponent: require("actorjs-components").ValidationComponent
     }
-
-}
+};

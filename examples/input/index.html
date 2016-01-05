@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Input</h1>
+
+
+    <div ng-app="app">
+
+        <form ng-controller="initController">
+
+            <div class="form-group">
+                <label for="inputText">Email address</label>
+                <rc-input type="text" id="inputText" name="inputText" ng-model="inputText" class="form-control" id="exampleInputEmail11" placeholder="Email" ></rc-input>
+            </div>
+
+            <div class="form-group">
+                <label for="inputRadio1">Email address</label>
+                <rc-input id="inputRadio1" type="radio" name="inputRadio" ng-model="inputRadio" value="123" class="form-control" ></rc-input>
+             </div>
+
+            <div class="form-group">
+                <label for="inputRadio2">Email address</label>
+                <rc-input id="inputRadio2" type="radio" name="inputRadio" ng-model="inputRadio" value="456" class="form-control" ></rc-input>
+            </div>
+
+            <div class="form-group">
+                <label for="inputRadio3">Email address</label>
+                <rc-input id="inputRadio3" type="radio" name="inputRadio" ng-model="inputRadio" value="789" class="form-control" ></rc-input>
+            </div>
+
+            <p>Input text: {{inputText}}</p>
+            <p>Input radio: {{inputRadio}}</p>
+
+        </form>
+
+
+
+    </div>
+
+</div>
+
+<script src="/lib/angular/angular.js"></script>
+
+<script type="text/javascript" src="/bundle.js"></script>
+<!--<script type="text/javascript" src="app.js"></script>-->
+
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="/directives/rcInput.js"></script>
+<script type="text/javascript" src="/directives/rcSelect.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
