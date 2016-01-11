@@ -6,7 +6,7 @@ var app = express();
 app.use(express.static(__dirname + "/src"));
 app.use(express.static(__dirname + "/examples"));
 app.use(express.static(__dirname + "/dist"));
-app.use("/lib", express.static( __dirname + '/../lib'));
+app.use("/lib", express.static( __dirname + '/../bower_components'));
 
 app.use(bodyParser.json());
 
@@ -28,8 +28,6 @@ app.post("/events", function(req, res){
     console.log("POST /events:",event.id, JSON.stringify(req.body, null ,4));
     res.send();
 });
-
-
 
 var server = app.listen(3000, function () {
     var host = server.address().address;

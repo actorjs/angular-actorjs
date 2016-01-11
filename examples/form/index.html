@@ -13,44 +13,32 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" ng-app="app">
 
     <h1>Input</h1>
 
 
-    <div ng-app="app">
+    <div ng-controller="initController">
 
-        <form ng-controller="initController">
+        <rc-form name="baseForm">
 
             <div class="form-group">
                 <label for="inputText">Email address</label>
                 <rc-input type="text" id="inputText" name="inputText" ng-model="inputText" class="form-control" id="exampleInputEmail11" placeholder="Email" ></rc-input>
             </div>
-            <p>123Input text: {{inputText}}</p>
 
-            <div class="form-group">
-                <label for="inputRadio1">Email address</label>
-                <rc-input id="inputRadio1" type="radio" name="inputRadio" ng-model="inputRadio" value="123" class="form-control" ></rc-input>
-             </div>
-
-            <div class="form-group">
-                <label for="inputRadio2">Email address</label>
-                <rc-input id="inputRadio2" type="radio" name="inputRadio" ng-model="inputRadio" value="456" class="form-control" ></rc-input>
+            <div class="form-group" >
+                <label for="select1">option</label>
+                <rc-select id="select1" name="select1" ng-model="select1" class="form-control">
+                    <option value="1">Test1</option>
+                    <option value="2">Test2</option>
+                </rc-select>
             </div>
 
-            <div class="form-group">
-                <label for="inputRadio3">Email address</label>
-                <rc-input id="inputRadio3" type="radio" name="inputRadio" ng-model="inputRadio" value="789" class="form-control" ></rc-input>
-            </div>
+            <p>InputText: {{inputText}}</p>
+            <p>select1: {{select1}}</p>
 
-            <p>Input text: {{inputText}}</p>
-            <p>Input radio: {{inputRadio}}</p>
-
-            <input ng-model="inputText">
-
-            {{test}}
-
-        </form>
+        </rc-form>
     </div>
 </div>
 
@@ -60,6 +48,7 @@
 
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="/directives/rcInput.js"></script>
+<script type="text/javascript" src="/directives/rcForm.js"></script>
 <script type="text/javascript" src="/directives/rcSelect.js"></script>
 
 <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>

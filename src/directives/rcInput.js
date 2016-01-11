@@ -12,26 +12,20 @@ angular.module("rc", [])
                 var name = attrs['name'];
                 var ngModel = controlls[1];
 
-                var inputActor = new actorjs.components.InputComponent(name);
-
-                inputActor.events.onchange = function (value) {
-                    if (!inputActor.ready) {
-                        console.log("Value", value);
-                        ngModel.$setViewValue(value);
-                        ngModel.$render()
+                var actor = new actorjs.components.InputComponent(name);
+                actor.events.onInit = function (restart) {
+                    if (restart) {
+                        ngModel.$setViewValue(actor.value);
+                        ngModel.$render();
                     }
                 };
 
-                scope.actorRef = scope.$parent.actorRef.context.actorOf(inputActor, name);
+                var actorRef = scope.$parent.actorRef.context.actorOf(actor, name);
+                scope.actorRef = actorRef;
 
-                // Listen for change events to enable binding
-                element.bind('keyup change', function (event) {
-                    scope.$apply(function () {
-                        if (inputActor.ready) {
-                            scope.actorRef.tell({"value": element[0].value});
-                        }
-                    });
-
+                element.bind('keyup change', function () {
+                    scope.actorRef.tell({"value": element.val()});
+                    scope.$apply();
                 });
             }
         }

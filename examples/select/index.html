@@ -8,7 +8,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -31,43 +31,40 @@
 
             <div class="form-group">
                 <label for="select2">ng-repeat</label>
-                <rc-select id="select2" name="select2" ng-model="select2" class="form-control" rc-init="testInit">
-                    <option value="{{item}}" ng-repeat="item in list">{{item}}</option>
+                <rc-select id="select2" name="select2" ng-model="select2" class="form-control" rc-init="init2">
+                    <option value="{{item}}" ng-repeat="item in list2">{{item.name}}</option>
                 </rc-select>
             </div>
 
             <div class="form-group">
                 <label for="select3">ng-options</label>
-                <rc-select id="select3" name="select2" ng-model="select3" class="form-control"
-                           ng-options="i.name for i in list track by i"></rc-select>
+                <rc-select id="select3" name="select3" ng-model="select3" class="form-control"
+                           ng-options="i.name for i in list3" rc-init="init3"></rc-select>
             </div>
 
+            <div class="form-group">
+                <label for="select4">ng-options pre set</label>
+                <rc-select id="select4" name="select4" ng-model="select4" class="form-control"
+                           ng-options="i.name for i in list4" rc-init="init4"></rc-select>
+            </div>
 
             <p>select1: {{select1}}</p>
-
             <p>select2: {{select2}}</p>
-
             <p>select3: {{select3}}</p>
-
+            <p>select4: {{select4}}</p>
 
         </form>
-
-
     </div>
-
 </div>
 
-<script src="/lib/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
 
 <script type="text/javascript" src="/bundle.js"></script>
-<!--<script type="text/javascript" src="app.js"></script>-->
 
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="/directives/rcInput.js"></script>
 <script type="text/javascript" src="/directives/rcSelect.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>

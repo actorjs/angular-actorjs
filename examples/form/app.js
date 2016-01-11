@@ -22,6 +22,4 @@ angular.module('app', ['rc'])
             ]
         }
 
-        $scope.test = "23456754"
-
     });

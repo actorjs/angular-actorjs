@@ -23,94 +23,12 @@
 
     <h1>Hello World!</h1>
 
+<ul>
+    <li><a href="/input">Input</a></li>
+    <li><a href="/select">Select</a></li>
+    <li><a href="/form">Form</a></li>
+</ul>
 
-    <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input id="myText1" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input id="myText2" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <select id="sel1" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
-    </form>
-
-    <div ng-app="app">
-
-        <form ng-controller="initController">
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-input type="text" id="hallo" name="email" ng-model="lala" valid="lala" class="form-control" id="exampleInputEmail11" placeholder="Email" ></rc-input>
-            </div>
-
-            {{lala}}
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-input type="radio" name="hallo" ng-model="tralla" value="123" valid="lala" class="form-control" ></rc-input>
-             </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-input type="radio" name="hallo" ng-model="tralla" value="456" class="form-control" ></rc-input>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-input type="radio" name="hallo" ng-model="tralla" value="789" class="form-control" ></rc-input>
-            </div>
-
-
-            <div class="form-group" ng-init="selele1='1'">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-select name="select1" ng-model="selele1" class="form-control">
-                    <option value="1">Test1</option>
-                    <option value="2">Test2</option>
-                </rc-select>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-select name="select2" ng-model="selele2" class="form-control" ng-options="i.name for i in list track by i" rc-init="testInit"></rc-select>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <rc-select name="select3" ng-model="selele3" class="form-control" rc-init="testInit">
-                    <option value="{{item}}" ng-repeat="item in list">{{item}}</option>
-                </rc-select>
-            </div>
-
-
-            <p>Value: {{tralla}}</p>
-            <p>Value1: {{selele1}}</p>
-            <p>Value2: {{selele2}}</p>
-            <p>Value3: {{selele3}}</p>
-            <p>List: {{list}}</p>
-
-
-
-        </form>
-
-
-        <div contenteditable name="myWidget" ng-model="userContent" required>Change me!</div>
-
-{{userContent}}
-    </div>
-
-</div>
 
 <script src="/lib/angular/angular.js"></script>
 
